@@ -1,0 +1,15 @@
+<h1>joins#new</h1>
+<h3>groups</h3>
+<table>
+	<thead>
+		<tr>name</tr>
+	</thead>
+	<tbody>
+		<% @groups.each do |group| %>
+			<tr>
+				<td><%= group.name %></td>
+				<td><%= link_to "Join", joins_path(group_id: group.id), method: :post %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

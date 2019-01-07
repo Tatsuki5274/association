@@ -1,0 +1,19 @@
+<h1>joins#index</h1>
+<table>
+	<caption>所属グループ</caption>
+	<thead>
+		<tr>
+			<th>header</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% current_user.groups.each do |group| %>
+			<tr>
+				<td><%= group.name %></td>
+				<td><%= link_to "脱退", join_path(group.id), method: :delete %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<br>
+<%= link_to "新規所属", new_join_path %>
